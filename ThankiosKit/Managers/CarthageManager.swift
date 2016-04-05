@@ -20,8 +20,8 @@ public struct CarthageManager: ManagerProtocol {
         self.path = path
     }
     
-    public func collect() -> [LibraryModel] {
+    public func collect() -> [Library] {
         let checkouts = Path(self.path) + "Carthage/Checkouts"
-        return checkouts.find(searchDepth: 0) { $0.isDirectory }.map { LibraryModel(path: $0.rawValue) }
+        return checkouts.find(searchDepth: 0) { $0.isDirectory }.map { Library(path: $0.rawValue) }
     }
 }

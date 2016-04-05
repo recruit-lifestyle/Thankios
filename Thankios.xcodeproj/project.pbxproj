@@ -8,19 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		AA5B5AB01C9FE9D50099B3B5 /* FileKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5B5AAF1C9FE9D50099B3B5 /* FileKit.framework */; };
-		AA5B5AB81C9FEB280099B3B5 /* FileKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AA5B5AAF1C9FE9D50099B3B5 /* FileKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AADA79191C9FE16E00318613 /* ThankiosKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF973B721C9E90480065ED90 /* ThankiosKit.framework */; };
 		AADA791A1C9FE16E00318613 /* ThankiosKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF973B721C9E90480065ED90 /* ThankiosKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF29CE6A1CB24CA3003DE779 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29CE691CB24CA3003DE779 /* Project.swift */; };
+		BF29CE6C1CB24DD9003DE779 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29CE6B1CB24DD9003DE779 /* Library.swift */; };
+		BF29CE6F1CB24F33003DE779 /* ExtractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29CE6E1CB24F33003DE779 /* ExtractorProtocol.swift */; };
+		BF29CE711CB24FBB003DE779 /* LicenseFileExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29CE701CB24FBB003DE779 /* LicenseFileExtractor.swift */; };
+		BF29CE751CB2516E003DE779 /* ReadMeExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29CE741CB2516E003DE779 /* ReadMeExtractor.swift */; };
+		BF4B54351CB3C0AA00E0E410 /* FileKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AA5B5AAF1C9FE9D50099B3B5 /* FileKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF4B54371CB3C10400E0E410 /* PrettyColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4B54361CB3C10400E0E410 /* PrettyColors.framework */; };
+		BF4B54381CB3C10E00E0E410 /* PrettyColors.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = BF4B54361CB3C10400E0E410 /* PrettyColors.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF973B6C1C9E8FE50065ED90 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF973B6B1C9E8FE50065ED90 /* main.swift */; };
 		BF973B751C9E90480065ED90 /* ThankiosKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BF973B741C9E90480065ED90 /* ThankiosKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF973B7C1C9E90480065ED90 /* ThankiosKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF973B721C9E90480065ED90 /* ThankiosKit.framework */; };
 		BF973B831C9E90480065ED90 /* ThankiosKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF973B821C9E90480065ED90 /* ThankiosKitTests.swift */; };
-		BFBAC45F1C9FFECE00598D51 /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAC45E1C9FFECE00598D51 /* RootModel.swift */; };
 		BFBAC4611C9FFF9E00598D51 /* InputForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAC4601C9FFF9E00598D51 /* InputForm.swift */; };
 		BFBAC4641CA0036900598D51 /* CocoaPodsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAC4631CA0036900598D51 /* CocoaPodsManager.swift */; };
 		BFBAC4661CA0037500598D51 /* CarthageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAC4651CA0037500598D51 /* CarthageManager.swift */; };
 		BFBAC4681CA0037D00598D51 /* ManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAC4671CA0037D00598D51 /* ManagerProtocol.swift */; };
-		BFBAC46A1CA003C200598D51 /* LibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAC4691CA003C200598D51 /* LibraryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +59,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AA5B5AB81C9FEB280099B3B5 /* FileKit.framework in Copy Frameworks */,
+				BF4B54351CB3C0AA00E0E410 /* FileKit.framework in Copy Frameworks */,
+				BF4B54381CB3C10E00E0E410 /* PrettyColors.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +80,12 @@
 
 /* Begin PBXFileReference section */
 		AA5B5AAF1C9FE9D50099B3B5 /* FileKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FileKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF29CE691CB24CA3003DE779 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		BF29CE6B1CB24DD9003DE779 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
+		BF29CE6E1CB24F33003DE779 /* ExtractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractorProtocol.swift; sourceTree = "<group>"; };
+		BF29CE701CB24FBB003DE779 /* LicenseFileExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseFileExtractor.swift; sourceTree = "<group>"; };
+		BF29CE741CB2516E003DE779 /* ReadMeExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadMeExtractor.swift; sourceTree = "<group>"; };
+		BF4B54361CB3C10400E0E410 /* PrettyColors.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PrettyColors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF973B5B1C9E8F6E0065ED90 /* thankios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thankios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF973B651C9E8F6E0065ED90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF973B6B1C9E8FE50065ED90 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -83,12 +95,10 @@
 		BF973B7B1C9E90480065ED90 /* ThankiosKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThankiosKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF973B821C9E90480065ED90 /* ThankiosKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankiosKitTests.swift; sourceTree = "<group>"; };
 		BF973B841C9E90480065ED90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFBAC45E1C9FFECE00598D51 /* RootModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
 		BFBAC4601C9FFF9E00598D51 /* InputForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputForm.swift; sourceTree = "<group>"; };
 		BFBAC4631CA0036900598D51 /* CocoaPodsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaPodsManager.swift; sourceTree = "<group>"; };
 		BFBAC4651CA0037500598D51 /* CarthageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarthageManager.swift; sourceTree = "<group>"; };
 		BFBAC4671CA0037D00598D51 /* ManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerProtocol.swift; sourceTree = "<group>"; };
-		BFBAC4691CA003C200598D51 /* LibraryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA5B5AB01C9FE9D50099B3B5 /* FileKit.framework in Frameworks */,
+				BF4B54371CB3C10400E0E410 /* PrettyColors.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,14 +133,26 @@
 		AA5B5AB11C9FE9FF0099B3B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF4B54361CB3C10400E0E410 /* PrettyColors.framework */,
 				AA5B5AAF1C9FE9D50099B3B5 /* FileKit.framework */,
 			);
 			name = Frameworks;
+			path = ThankiosKit;
+			sourceTree = "<group>";
+		};
+		BF29CE6D1CB24F07003DE779 /* Extractors */ = {
+			isa = PBXGroup;
+			children = (
+				BF29CE701CB24FBB003DE779 /* LicenseFileExtractor.swift */,
+				BF29CE741CB2516E003DE779 /* ReadMeExtractor.swift */,
+			);
+			path = Extractors;
 			sourceTree = "<group>";
 		};
 		BF973B521C9E8F6E0065ED90 = {
 			isa = PBXGroup;
 			children = (
+				AA5B5AB11C9FE9FF0099B3B5 /* Frameworks */,
 				BF973B5D1C9E8F6E0065ED90 /* Thankios */,
 				BF973B731C9E90480065ED90 /* ThankiosKit */,
 				BF973B811C9E90480065ED90 /* ThankiosKitTests */,
@@ -159,11 +182,11 @@
 		BF973B731C9E90480065ED90 /* ThankiosKit */ = {
 			isa = PBXGroup;
 			children = (
+				BF29CE6D1CB24F07003DE779 /* Extractors */,
 				BFBAC4621CA0035B00598D51 /* Managers */,
 				BFBAC45D1C9FFE5D00598D51 /* Protocols */,
 				BFBAC45C1C9FFE4D00598D51 /* Enumerations */,
 				BFBAC45B1C9FFE3F00598D51 /* Models */,
-				AA5B5AB11C9FE9FF0099B3B5 /* Frameworks */,
 				BF973B761C9E90480065ED90 /* Info.plist */,
 				BF973B741C9E90480065ED90 /* ThankiosKit.h */,
 			);
@@ -182,9 +205,9 @@
 		BFBAC45B1C9FFE3F00598D51 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BFBAC45E1C9FFECE00598D51 /* RootModel.swift */,
 				BFBAC4601C9FFF9E00598D51 /* InputForm.swift */,
-				BFBAC4691CA003C200598D51 /* LibraryModel.swift */,
+				BF29CE691CB24CA3003DE779 /* Project.swift */,
+				BF29CE6B1CB24DD9003DE779 /* Library.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				BFBAC4671CA0037D00598D51 /* ManagerProtocol.swift */,
+				BF29CE6E1CB24F33003DE779 /* ExtractorProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -364,11 +388,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFBAC4681CA0037D00598D51 /* ManagerProtocol.swift in Sources */,
-				BFBAC46A1CA003C200598D51 /* LibraryModel.swift in Sources */,
 				BFBAC4611C9FFF9E00598D51 /* InputForm.swift in Sources */,
-				BFBAC45F1C9FFECE00598D51 /* RootModel.swift in Sources */,
+				BF29CE751CB2516E003DE779 /* ReadMeExtractor.swift in Sources */,
 				BFBAC4661CA0037500598D51 /* CarthageManager.swift in Sources */,
+				BF29CE6C1CB24DD9003DE779 /* Library.swift in Sources */,
+				BF29CE711CB24FBB003DE779 /* LicenseFileExtractor.swift in Sources */,
+				BF29CE6A1CB24CA3003DE779 /* Project.swift in Sources */,
 				BFBAC4641CA0036900598D51 /* CocoaPodsManager.swift in Sources */,
+				BF29CE6F1CB24F33003DE779 /* ExtractorProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +546,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = ThankiosKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -543,6 +574,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = ThankiosKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

@@ -20,16 +20,16 @@ public struct CocoaPodsManager: ManagerProtocol {
         self.path = path
     }
     
-    public func collect() -> [LibraryModel] {
+    public func collect() -> [Library] {
         let searchPath = Path(self.path) + "Pods"
         return searchPath.find(searchDepth: 0) { path in
-            return path.isDirectory
-                && ![
+            let contains = [
                 "Headers",
                 "Local Podspecs",
                 "Pods.xcodeproj",
                 "Target Support Files"
                 ].contains(path.fileName)
-            }.map { LibraryModel(path: $0.rawValue) }
+            return path.isDirectory && !contains
+            }.map { Library(path: $0.rawValue) }
     }
 }

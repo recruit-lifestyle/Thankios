@@ -15,6 +15,12 @@
 				<key>RootRelativeBundlePath</key>
 				<string>Library/Frameworks/ThankiosKit.framework/Versions/A/Frameworks/FileKit.framework</string>
 			</dict>
+			<dict>
+				<key>BundleOverwriteAction</key>
+				<string></string>
+				<key>RootRelativeBundlePath</key>
+				<string>Library/Frameworks/ThankiosKit.framework/Versions/A/Frameworks/PrettyColors.framework</string>
+			</dict>
 		</array>
 		<key>RootRelativeBundlePath</key>
 		<string>Library/Frameworks/ThankiosKit.framework</string>

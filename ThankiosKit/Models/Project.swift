@@ -49,7 +49,7 @@ public struct Project {
             "StringsTable": "Acknowledgements",
             "Title": "Acknowledgements",
             ]
-        let file = Path(destination) + "LisenceList.plist"
+        let file = Path(destination) + "Acknowledgements.plist"
         try! contents.writeToPath(file)
     }
 }

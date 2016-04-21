@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 Nikolai Vazquez
+//  Copyright (c) 2015-2016 Nikolai Vazquez
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -27,7 +27,7 @@
 
 import Foundation
 
-extension NSData : DataType, WritableToFile {
+extension NSData: DataType, WritableToFile {
 
     /// Returns data read from the given path.
     public class func readFromPath(path: Path) throws -> Self {
@@ -36,5 +36,14 @@ extension NSData : DataType, WritableToFile {
         }
         return contents
     }
-    
+
+    /// Returns data read from the given path using NSDataReadingOptions.
+    public class func readFromPath(path: Path, options: NSDataReadingOptions) throws -> Self {
+        do {
+            return try self.init(contentsOfFile: path.rawValue, options: options)
+        } catch {
+            throw FileKitError.ReadFromFileFail(path: path)
+        }
+    }
+
 }

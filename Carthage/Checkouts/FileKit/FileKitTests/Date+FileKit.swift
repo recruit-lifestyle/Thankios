@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 Nikolai Vazquez
+//  Copyright (c) 2015-2016 Nikolai Vazquez
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -27,11 +27,21 @@
 
 import Foundation
 
-public func ==(lhs: NSDate, rhs: NSDate) -> Bool {
+/// Checks equality of two `NSDate` objects.
+///
+/// - Parameter lhs: The left hand side of the comparison.
+/// - Parameter rhs: The right hand side of the comparison.
+/// - Returns: `true` if the two objects are equal, otherwise `false`.
+public func == (lhs: NSDate, rhs: NSDate) -> Bool {
     return lhs === rhs || lhs.compare(rhs) == .OrderedSame
 }
 
-public func <(lhs: NSDate, rhs: NSDate) -> Bool {
+/// Compares two `NSDate` objects.
+///
+/// - Parameter lhs: The left hand side of the comparison.
+/// - Parameter rhs: The right hand side of the comparison.
+/// - Returns: `true` if the left hand side is smaller than the right hand side, otherwise `false`.
+public func < (lhs: NSDate, rhs: NSDate) -> Bool {
     return lhs.compare(rhs) == .OrderedAscending
 }
 

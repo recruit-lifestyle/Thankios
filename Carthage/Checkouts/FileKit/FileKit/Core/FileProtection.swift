@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 Nikolai Vazquez
+//  Copyright (c) 2015-2016 Nikolai Vazquez
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@ import Foundation
 
 /// The values that can be obtained from `NSFileProtectionKey` on a
 /// file's attributes. Only available on iOS, watchOS, and tvOS.
-public enum FileProtection : String {
+public enum FileProtection: String {
 
     /// The file has no special protections associated with it.
     case None
@@ -48,6 +48,9 @@ public enum FileProtection : String {
     case CompleteUntilFirstUserAuthentication
 
     /// Initializes `self` from a file protection value.
+    ///
+    /// - Parameter rawValue: The raw value to initialize from.
+    ///
     public init?(rawValue: String) {
         switch rawValue {
         case NSFileProtectionNone:
@@ -76,6 +79,21 @@ public enum FileProtection : String {
             return NSFileProtectionCompleteUntilFirstUserAuthentication
         }
     }
+
+    ///  Return the equivalent NSDataWritingOptions
+    public var dataWritingOption: NSDataWritingOptions {
+        switch self {
+        case .None:
+            return .DataWritingFileProtectionNone
+        case .Complete:
+            return .DataWritingFileProtectionComplete
+        case .CompleteUnlessOpen:
+            return .DataWritingFileProtectionCompleteUnlessOpen
+        case .CompleteUntilFirstUserAuthentication:
+            return .DataWritingFileProtectionCompleteUntilFirstUserAuthentication
+        }
+    }
+
 }
 
 extension Path {
@@ -85,10 +103,28 @@ extension Path {
     /// The protection of the file at the path.
     public var fileProtection: FileProtection? {
         guard let value = attributes[NSFileProtectionKey] as? String,
-            protection  = FileProtection(rawValue: value)
-            else { return nil }
+            protection  = FileProtection(rawValue: value) else {
+            return nil
+        }
         return protection
     }
+
+    /// Creates a file at path with specified file protection.
+    ///
+    /// - Parameter fileProtection: the protection to apply to the file.
+    ///
+    /// Throws an error if the file cannot be created.
+    ///
+    /// - Throws: `FileKitError.CreateFileFail`
+    ///
+    public func createFile(fileProtection: FileProtection) throws {
+        let manager = NSFileManager()
+        let attributes = [NSFileProtectionKey : fileProtection.rawValue]
+        if !manager.createFileAtPath(rawValue, contents: nil, attributes: attributes) {
+            throw FileKitError.CreateFileFail(path: self)
+        }
+    }
+
 }
 
 extension File {
@@ -99,4 +135,40 @@ extension File {
     public var protection: FileProtection? {
         return path.fileProtection
     }
+
+    /// Creates the file with specified file protection.
+    ///
+    /// - Parameter fileProtection: the protection to apply to the file.
+    ///
+    /// Throws an error if the file cannot be created.
+    ///
+    /// - Throws: `FileKitError.CreateFileFail`
+    ///
+    public func create(fileProtection: FileProtection) throws {
+        try path.createFile(fileProtection)
+    }
+
+}
+
+extension File where Data: NSData {
+
+    /// Writes data to the file.
+    ///
+    /// - Parameter data: The data to be written to the file.
+    /// - Parameter fileProtection: the protection to apply to the file.
+    /// - Parameter atomically: If `true`, the data is written to an
+    ///                         auxiliary file that is then renamed to the
+    ///                         file. If `false`, the data is written to
+    ///                         the file directly.
+    ///
+    /// - Throws: `FileKitError.WriteToFileFail`
+    ///
+    public func write(data: Data, fileProtection: FileProtection, atomically: Bool = true) throws {
+        var options = fileProtection.dataWritingOption
+        if atomically {
+            options.unionInPlace(NSDataWritingOptions.DataWritingAtomic)
+        }
+        try self.write(data, options: options)
+    }
+
 }

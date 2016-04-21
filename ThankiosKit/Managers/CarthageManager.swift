@@ -7,6 +7,7 @@
 //
 
 import FileKit
+import PrettyColors
 
 public struct CarthageManager: ManagerProtocol {
     private let rootPath: String
@@ -23,13 +24,18 @@ public struct CarthageManager: ManagerProtocol {
     public func collect() -> [Library] {
         let checkouts = Path(self.rootPath) + "Carthage/Checkouts"
         let candidates = checkouts.find(searchDepth: 0) { $0.isDirectory }
-        return candidates.map { self.extract($0) }
+        return candidates.flatMap { self.extract($0) }
     }
     
-    private func extract(path: Path) -> Library {
+    private func extract(path: Path) -> Library? {
         let name = path.fileName
         let candidates = path.find(searchDepth: 0) { $0.fileName.uppercaseString.containsString("LICENSE") }
-        let license = candidates.flatMap { try? String(contentsOfPath: $0) }.first ?? ""
+        let contents = candidates.flatMap { try? String(contentsOfPath: $0) }.first
+        guard let license = contents else {
+            let message = "LICENSE file not found in Carthage/Checkouts: " + Color.Wrap(foreground: .Blue).wrap(name)
+            print(message)
+            return nil
+        }
         let library = Library(name: name, license: license)
         return library
     }

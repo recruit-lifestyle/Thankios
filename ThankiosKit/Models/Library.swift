@@ -21,14 +21,4 @@ public struct Library {
         self.name    = name
         self.license = license
     }
-    
-    public func printResult() {
-        var information = Color.Wrap(foreground: .Blue).wrap(self.name) + ": "
-        defer { print(information) }
-        if license.isEmpty {
-            information += Color.Wrap(foreground: .Red).wrap("License not found.")
-        } else {
-            information += "License found."
-        }
-    }
 }

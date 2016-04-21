@@ -7,6 +7,7 @@
 //
 
 import FileKit
+import PrettyColors
 
 public struct Project {
     public let libraries: [Library]
@@ -30,7 +31,11 @@ public struct Project {
             .map     { $0.init(rootPath: cwd) }
             .filter  { $0.managing }
             .flatMap { $0.collect() }
-        libraries.forEach { $0.printResult() }
+        var information = "LICENSE found libraries:\n"
+        defer { print(information) }
+        libraries.forEach { library in
+            information += Color.Wrap(foreground: .Blue).wrap(library.name) + "\t"
+        }
         return Project(libraries: libraries)
     }
     

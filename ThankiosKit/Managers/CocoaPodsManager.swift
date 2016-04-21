@@ -31,9 +31,7 @@ public struct CocoaPodsManager: ManagerProtocol {
     private func extract(specifier: Specifier) -> Library? {
         let title      = specifier["Title"]!
         let footerText = specifier["FooterText"]!
-        guard !["Acknowledgements", ""].contains(title) else {
-            return nil
-        }
+        guard !["Acknowledgements", ""].contains(title) else { return nil }
         return Library(name: title, license: footerText)
     }
 }

@@ -9,7 +9,6 @@
 import FileKit
 
 public struct Project {
-    public let path: String
     public let libraries: [Library]
     
     private let candidates: [ManagerProtocol.Type] = [
@@ -17,23 +16,22 @@ public struct Project {
         CarthageManager.self
     ]
     
-    public init(path: String) {
-        self.path = path
+    public init() {
         self.libraries = []
     }
     
-    private init(path: String, libraries: [Library]) {
-        self.path = path
+    private init(libraries: [Library]) {
         self.libraries = libraries
     }
     
     public func collect() -> Project {
+        let cwd = "./"
         let libraries = self.candidates
-            .map     { $0.init(path: self.path) }
+            .map     { $0.init(path: cwd) }
             .filter  { $0.managing }
             .flatMap { $0.collect() }
             .flatMap { $0.extractLicense() }
-        return Project(path: self.path, libraries: libraries)
+        return Project(libraries: libraries)
     }
     
     public func write(destination: String) {

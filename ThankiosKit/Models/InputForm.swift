@@ -9,14 +9,12 @@
 import PrettyColors
 
 public struct InputForm {
-    public let rootPath:   String
-    public let destPath: String
+    public let path: String
     
     public init(_ arguments: [String]) {
-        let usage = Color.Wrap(foreground: .Green).wrap("USAGE: thankios <project root directory> <output directory>")
+        let usage = Color.Wrap(foreground: .Green).wrap("USAGE: thankios <output directory>\n" + "on your project root")
         print(usage)
         let count = arguments.count
-        self.rootPath = count > 1 ? arguments[1] : "./"
-        self.destPath = count > 2 ? arguments[2] : "./"
+        self.path = count > 1 ? arguments[1] : "./"
     }
 }

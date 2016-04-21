@@ -1,14 +1,21 @@
 # Thankios
 Acknowlegements Settings.bundle generator for CocoaPods and Carthage.
 
+## Installation
+```bash
+$ brew tap uny/apple
+$ brew install thankios
+```
+
 ## Usage
 ```bash
-$ thankios <project root path> <destination path>
+# On your project root:
+$ thankios <destination path>
 
 # Example
-$ thankios ~/SampleProject/ ~/SampleProject/SampleProject/Settings.bundle/
+$ thankios ~/SampleProject/SampleProject/Settings.bundle/
 ```
 
 ## Requirements
-* Xcode 7.2.0+
-* OSX 10.10+
+* Xcode 7.3+
+* OSX 10.11+

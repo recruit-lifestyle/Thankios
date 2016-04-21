@@ -12,7 +12,7 @@ public struct InputForm {
     public let path: String
     
     public init(_ arguments: [String]) {
-        let usage = Color.Wrap(foreground: .Green).wrap("USAGE: thankios <output directory>\n" + "on your project root")
+        let usage = Color.Wrap(foreground: .Green).wrap("USAGE (on your project root): thankios <output directory>")
         print(usage)
         let count = arguments.count
         self.path = count > 1 ? arguments[1] : "./"

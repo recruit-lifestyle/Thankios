@@ -8,6 +8,6 @@
 
 public protocol ManagerProtocol {
     var managing: Bool { get }
-    init(path: String)
+    init(rootPath: String)
     func collect() -> [Library]
 }

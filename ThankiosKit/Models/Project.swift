@@ -27,10 +27,10 @@ public struct Project {
     public func collect() -> Project {
         let cwd = "./"
         let libraries = self.candidates
-            .map     { $0.init(path: cwd) }
+            .map     { $0.init(rootPath: cwd) }
             .filter  { $0.managing }
             .flatMap { $0.collect() }
-            .flatMap { $0.extractLicense() }
+        libraries.forEach { $0.printResult() }
         return Project(libraries: libraries)
     }
     

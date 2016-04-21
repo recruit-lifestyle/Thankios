@@ -22,9 +22,7 @@ public struct CocoaPodsManager: ManagerProtocol {
     }
     
     public func collect() -> [Library] {
-        let filePath = (Path(self.rootPath) + "Pods/Target Support Files")
-            .find(searchDepth: 0) { $0.fileName.hasPrefix("Pods-") }.first!
-            + "Pods-Example-acknowledgements.plist"
+        let filePath = Path(self.rootPath) + "Pods/Target Support Files/Pods/Pods-acknowledgements.plist"
         let contents = try! NSDictionary(contentsOfPath: filePath)
         let specifiers = contents["PreferenceSpecifiers"] as! [Specifier]
         return specifiers.flatMap { self.extract($0) }

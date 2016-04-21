@@ -1,2 +1,2 @@
-github "nvzqz/FileKit"
+github "nvzqz/FileKit" "develop"
 github "jdhealy/PrettyColors"

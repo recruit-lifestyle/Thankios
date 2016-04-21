@@ -9,27 +9,33 @@
 import FileKit
 
 public struct CocoaPodsManager: ManagerProtocol {
-    private let path: String
+    private let rootPath: String
+    private typealias Specifier = [String: String]
     
     public var managing: Bool {
-        let pods = Path(self.path) + "Pods"
+        let pods = Path(self.rootPath) + "Pods"
         return pods.isDirectory
     }
     
-    public init(path: String) {
-        self.path = path
+    public init(rootPath: String) {
+        self.rootPath = rootPath
     }
     
     public func collect() -> [Library] {
-        let searchPath = Path(self.path) + "Pods"
-        return searchPath.find(searchDepth: 0) { path in
-            let contains = [
-                "Headers",
-                "Local Podspecs",
-                "Pods.xcodeproj",
-                "Target Support Files"
-                ].contains(path.fileName)
-            return path.isDirectory && !contains
-            }.map { Library(path: $0.rawValue) }
+        let filePath = (Path(self.rootPath) + "Pods/Target Support Files")
+            .find(searchDepth: 0) { $0.fileName.hasPrefix("Pods-") }.first!
+            + "Pods-Example-acknowledgements.plist"
+        let contents = try! NSDictionary(contentsOfPath: filePath)
+        let specifiers = contents["PreferenceSpecifiers"] as! [Specifier]
+        return specifiers.flatMap { self.extract($0) }
+    }
+    
+    private func extract(specifier: Specifier) -> Library? {
+        let title      = specifier["Title"]!
+        let footerText = specifier["FooterText"]!
+        guard !["Acknowledgements", ""].contains(title) else {
+            return nil
+        }
+        return Library(name: title, license: footerText)
     }
 }

@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 Nikolai Vazquez
+//  Copyright (c) 2015-2016 Nikolai Vazquez
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,6 +24,9 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 //
+//  swiftlint:disable type_body_length
+//  swiftlint:disable file_length
+//
 
 import XCTest
 import FileKit
@@ -31,6 +34,50 @@ import FileKit
 class FileKitTests: XCTestCase {
 
     // MARK: - Path
+
+    class Delegate: NSObject, NSFileManagerDelegate {
+        var expectedSourcePath: Path = ""
+        var expectedDestinationPath: Path = ""
+        func fileManager(
+            fileManager: NSFileManager,
+            shouldCopyItemAtPath srcPath: String,
+            toPath dstPath: String
+        ) -> Bool {
+            XCTAssertEqual(srcPath, expectedSourcePath.rawValue)
+            XCTAssertEqual(dstPath, expectedDestinationPath.rawValue)
+            return true
+        }
+    }
+
+    func testPathFileManagerDelegate() {
+        do {
+            var sourcePath = .UserTemporary + "filekit_test_filemanager_delegate"
+            let destinationPath = Path("\(sourcePath)1")
+            try sourcePath.createFile()
+
+            var delegate: Delegate {
+                let delegate = Delegate()
+                delegate.expectedSourcePath = sourcePath
+                delegate.expectedDestinationPath = destinationPath
+                return delegate
+            }
+
+            let d1 = delegate
+            sourcePath.fileManagerDelegate = d1
+            XCTAssertTrue(d1 === sourcePath.fileManagerDelegate)
+
+            try sourcePath +>! destinationPath
+
+            var secondSourcePath = sourcePath
+            secondSourcePath.fileManagerDelegate = delegate
+            XCTAssertFalse(sourcePath.fileManagerDelegate === secondSourcePath.fileManagerDelegate)
+            try secondSourcePath +>! destinationPath
+
+        } catch {
+            XCTFail(String(error))
+        }
+
+    }
 
     func testFindingPaths() {
         let homeFolders = Path.UserHome.find(searchDepth: 0) { $0.isDirectory }
@@ -79,13 +126,13 @@ class FileKitTests: XCTestCase {
         var i = 0
         let parent = Path.UserTemporary
         for _ in parent {
-            i++
+            i += 1
         }
         print("\(i) files under \(parent)")
 
         i = 0
         for (_, _) in Path.UserTemporary.enumerate() {
-            i++
+            i += 1
         }
     }
 
@@ -170,9 +217,13 @@ class FileKitTests: XCTestCase {
     func testPathAttributes() {
 
         let a = .UserTemporary + "test.txt"
-        try! "Hello there, sir" |> TextFile(path: a)
         let b = .UserTemporary + "TestDir"
-        try! b.createDirectory()
+        do {
+            try "Hello there, sir" |> TextFile(path: a)
+            try b.createDirectory()
+        } catch {
+            XCTFail(String(error))
+        }
 
         for p in [a, b] {
             print(p.creationDate)
@@ -213,10 +264,10 @@ class FileKitTests: XCTestCase {
         XCTAssertEqual(a, "~/Desktop/Files")
     }
 
+
     func testPathSymlinking() {
         do {
             let testDir: Path = .UserTemporary + "filekit_test_symlinking"
-
             if testDir.exists && !testDir.isDirectory {
                 try testDir.deleteFile()
                 XCTAssertFalse(testDir.exists)
@@ -306,14 +357,13 @@ class FileKitTests: XCTestCase {
 
     func testURL() {
         let path: Path = .UserTemporary
-        let URL = path.URL
-        if let pathFromUrl = Path(URL: URL) {
-            XCTAssertEqual(pathFromUrl, path)
+        let url = path.url
+        if let pathFromURL = Path(url: url) {
+            XCTAssertEqual(pathFromURL, path)
 
-            let subPath = pathFromUrl + "test"
-            XCTAssertEqual(Path(URL: URL.URLByAppendingPathComponent("test")), subPath)
-        }
-        else {
+            let subPath = pathFromURL + "test"
+            XCTAssertEqual(Path(url: url.URLByAppendingPathComponent("test")), subPath)
+        } else {
             XCTFail("Not able to create Path from URL")
         }
     }
@@ -325,11 +375,15 @@ class FileKitTests: XCTestCase {
         if let bookmarkData = path.bookmarkData {
             if let pathFromBookmarkData = Path(bookmarkData: bookmarkData) {
                 XCTAssertEqual(pathFromBookmarkData, path)
-            }
-            else {
+            } else {
                 XCTFail("Not able to create Path from Bookmark Data")
             }
         }
+    }
+
+    func testGroupIdentifier() {
+        let path = Path(groupIdentifier: "com.nikolaivazquez.FileKitTests")
+        XCTAssertNotNil(path, "Not able to create Path from group identifier")
     }
 
     func testTouch() {
@@ -361,16 +415,24 @@ class FileKitTests: XCTestCase {
             XCTFail(String(error))
         }
     }
-    
+
     func testCreateDirectory() {
         let dir: Path = .UserTemporary + "filekit_testdir"
 
-        if dir.exists { try! dir.deleteFile() }
+        do {
+            if dir.exists { try dir.deleteFile() }
+        } catch {
+            XCTFail(String(error))
+        }
 
         defer {
-            if dir.exists { try! dir.deleteFile() }
+            do {
+                if dir.exists { try dir.deleteFile() }
+            } catch {
+                XCTFail(String(error))
+            }
         }
-        
+
         do {
             XCTAssertFalse(dir.exists)
             try dir.createDirectory()
@@ -378,7 +440,6 @@ class FileKitTests: XCTestCase {
         } catch {
             XCTFail(String(error))
         }
-        
         do {
             XCTAssertTrue(dir.exists)
             try dir.createDirectory(withIntermediateDirectories: false)
@@ -388,7 +449,6 @@ class FileKitTests: XCTestCase {
         } catch {
             XCTFail("Unknown error: " + String(error))
         }
-        
         do {
             XCTAssertTrue(dir.exists)
             try dir.createDirectory(withIntermediateDirectories: true)
@@ -396,14 +456,35 @@ class FileKitTests: XCTestCase {
         } catch {
             XCTFail("Unexpected error: " + String(error))
         }
-
     }
 
     func testWellKnownDirectories() {
-        XCTAssertTrue(Path.UserHome.exists)
-        XCTAssertTrue(Path.UserTemporary.exists)
-        XCTAssertTrue(Path.UserCaches.exists)
+        var paths: [Path] = [
+            .UserHome, .UserTemporary, .UserCaches, .UserDesktop, .UserDocuments,
+            .UserAutosavedInformation, .UserDownloads, .UserLibrary, .UserMovies,
+            .UserMusic, .UserPictures, .UserApplicationSupport, .UserApplications,
+            .UserSharedPublic
+        ]
+        paths += [
+            .SystemApplications, .SystemApplicationSupport, .SystemLibrary,
+            .SystemCoreServices, .SystemPreferencePanes /* .SystemPrinterDescription,*/
+        ]
+        #if os(OSX)
+            paths += [.UserTrash] // .UserApplicationScripts (not testable)
+        #endif
 
+        for path in paths {
+            XCTAssertTrue(path.exists, path.rawValue)
+        }
+
+        // all
+
+        XCTAssertTrue(Path.AllLibraries.contains(.UserLibrary))
+        XCTAssertTrue(Path.AllLibraries.contains(.SystemLibrary))
+        XCTAssertTrue(Path.AllApplications.contains(.UserApplications))
+        XCTAssertTrue(Path.AllApplications.contains(.SystemApplications))
+
+        // temporary
         XCTAssertFalse(Path.ProcessTemporary.exists)
         XCTAssertFalse(Path.UniqueTemporary.exists)
         XCTAssertNotEqual(Path.UniqueTemporary, Path.UniqueTemporary)
@@ -411,20 +492,20 @@ class FileKitTests: XCTestCase {
 
     // MARK: - TextFile
 
-    let tf = TextFile(path: .UserTemporary + "filekit_test.txt")
+    let textFile = TextFile(path: .UserTemporary + "filekit_test.txt")
 
     func testFileName() {
         XCTAssertEqual(TextFile(path: "/Users/").name, "Users")
     }
 
     func testTextFileExtension() {
-        XCTAssertEqual(tf.pathExtension, "txt")
+        XCTAssertEqual(textFile.pathExtension, "txt")
     }
 
     func testTextFileExists() {
         do {
-            try tf.create()
-            XCTAssertTrue(tf.exists)
+            try textFile.create()
+            XCTAssertTrue(textFile.exists)
         } catch {
             XCTFail(String(error))
         }
@@ -432,8 +513,8 @@ class FileKitTests: XCTestCase {
 
     func testWriteToTextFile() {
         do {
-            try tf.write("This is some test.")
-            try tf.write("This is another test.", atomically: false)
+            try textFile.write("This is some test.")
+            try textFile.write("This is another test.", atomically: false)
         } catch {
             XCTFail(String(error))
         }
@@ -443,13 +524,78 @@ class FileKitTests: XCTestCase {
         do {
             let text = "FileKit Test"
 
-            try text |> tf
-            var contents = try tf.read()
+            try text |> textFile
+            var contents = try textFile.read()
             XCTAssertTrue(contents.hasSuffix(text))
 
-            try text |>> tf
-            contents = try tf.read()
+            try text |>> textFile
+            contents = try textFile.read()
             XCTAssertTrue(contents.hasSuffix(text + "\n" + text))
+
+        } catch {
+            XCTFail(String(error))
+        }
+    }
+
+    func testTextFileStreamReader() {
+        do {
+            let expectedLines = [
+                "Lorem ipsum dolor sit amet",
+                "consectetur adipiscing elit",
+                "Sed non risus"
+            ]
+            let separator = "\n"
+            try expectedLines.joinWithSeparator(separator) |> textFile
+
+            if let reader = textFile.streamReader() {
+                var lines = [String]()
+                for line in reader {
+                    lines.append(line)
+                }
+                XCTAssertEqual(expectedLines, lines)
+
+            } else {
+                XCTFail("Failed to create reader")
+            }
+
+        } catch {
+            XCTFail(String(error))
+        }
+    }
+
+    func testTextFileGrep() {
+        do {
+            let expectedLines = [
+                "Lorem ipsum dolor sit amet",
+                "consectetur adipiscing elit",
+                "Sed non risus"
+            ]
+            let separator = "\n"
+            try expectedLines.joinWithSeparator(separator) |> textFile
+
+            // all
+            var result = textFile | "e"
+            XCTAssertEqual(result, expectedLines)
+
+            // not all
+            result = textFile |- "e"
+            XCTAssertTrue(result.isEmpty)
+
+            // specific line
+            result = textFile | "eli"
+            XCTAssertEqual(result, [expectedLines[1]])
+            
+            // the other line
+            result = textFile |- "eli"
+            XCTAssertEqual(result, [expectedLines[0], expectedLines[2]])
+
+            // regex
+            result = textFile |~ "e.*i.*e.*"
+            XCTAssertEqual(result, [expectedLines[0], expectedLines[1]])
+
+            // this not a regex
+            result = textFile | "e.*i.*e.*"
+            XCTAssertTrue(result.isEmpty)
 
         } catch {
             XCTFail(String(error))
@@ -568,9 +714,9 @@ class FileKitTests: XCTestCase {
 
     // MARK: - Image
 
-    let img = Image(contentsOfURL: NSURL(string: "https://raw.githubusercontent.com/nvzqz/FileKit/assets/logo.png")!) ?? Image()
-
     func testImageWriting() {
+        let url = NSURL(string: "https://raw.githubusercontent.com/nvzqz/FileKit/assets/logo.png")!
+        let img = Image(contentsOfURL: url) ?? Image()
         do {
             let path: Path = .UserTemporary + "filekit_imagetest.png"
             try img.writeToPath(path)
@@ -579,4 +725,31 @@ class FileKitTests: XCTestCase {
         }
     }
 
+    // MARK: - Watch
+
+    func testWatch() {
+        let pathToWatch = .UserTemporary + "filekit_test_watch"
+        let expectation = "event"
+        let operation = {
+            do {
+                let message = "Testing file system event when writing..."
+                try message.writeToPath(pathToWatch, atomically: false)
+            } catch {
+                XCTFail(String(error))
+            }
+        }
+
+        // Do watch test
+        let expt = self.expectationWithDescription(expectation)
+        let watcher = pathToWatch.watch { event in
+            print(event)
+            // XXX here could check expected event type according to operation
+            expt.fulfill()
+        }
+        defer {
+            watcher.close()
+        }
+        operation()
+        self.waitForExpectationsWithTimeout(10, handler: nil)
+    }
 }

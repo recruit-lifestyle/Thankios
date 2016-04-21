@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 Nikolai Vazquez
+//  Copyright (c) 2015-2016 Nikolai Vazquez
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -31,7 +31,7 @@ import Foundation
 ///
 /// - Precondition: The data type must conform to DataType.
 ///
-public class File<Data : DataType> : Comparable {
+public class File<Data: DataType>: Comparable {
 
     // MARK: - Properties
 
@@ -66,6 +66,8 @@ public class File<Data : DataType> : Comparable {
     // MARK: - Initialization
 
     /// Initializes a file from a path.
+    ///
+    /// - Parameter path: The path a file to initialize from.
     public init(path: Path) {
         self.path = path
     }
@@ -75,6 +77,7 @@ public class File<Data : DataType> : Comparable {
     /// Reads the file and returns its data.
     ///
     /// - Throws: `FileKitError.ReadFromFileFail`
+    /// - Returns: The data read from file.
     public func read() throws -> Data {
         return try Data.readFromPath(path)
     }
@@ -116,6 +119,11 @@ public class File<Data : DataType> : Comparable {
     }
 
     /// Deletes the file.
+    ///
+    /// Throws an error if the file could not be deleted.
+    ///
+    /// - Throws: `FileKitError.DeleteFileFail`
+    ///
     public func delete() throws {
         try path.deleteFile()
     }
@@ -126,6 +134,7 @@ public class File<Data : DataType> : Comparable {
     ///
     /// Throws an error if the file cannot be moved.
     ///
+    /// - Parameter path: The path to move the file to.
     /// - Throws: `FileKitError.MoveFileFail`
     ///
     public func moveToPath(path: Path) throws {
@@ -138,6 +147,8 @@ public class File<Data : DataType> : Comparable {
     /// Throws an error if the file could not be copied or if a file already
     /// exists at the destination path.
     ///
+    ///
+    /// - Parameter path: The path to copy the file to.
     /// - Throws: `FileKitError.FileDoesNotExist`, `FileKitError.CopyFileFail`
     ///
     public func copyToPath(path: Path) throws {
@@ -152,6 +163,8 @@ public class File<Data : DataType> : Comparable {
     /// If the path already exists and _is_ a directory, the link will be made
     /// to `self` in that directory.
     ///
+    ///
+    /// - Parameter path: The path to symlink the file to.
     /// - Throws:
     ///     `FileKitError.FileDoesNotExist`,
     ///     `FileKitError.CreateSymlinkFail`
@@ -171,7 +184,7 @@ public class File<Data : DataType> : Comparable {
 
     /// The file permissions for `self`.
     public var permissions: FilePermissions {
-        return path.filePermissions
+        return FilePermissions(forFile: self)
     }
 
     // MARK: - NSFileHandle
@@ -215,7 +228,7 @@ public class File<Data : DataType> : Comparable {
 
 }
 
-extension File : CustomStringConvertible {
+extension File: CustomStringConvertible {
 
     // MARK: - CustomStringConvertible
 
@@ -226,7 +239,7 @@ extension File : CustomStringConvertible {
 
 }
 
-extension File : CustomDebugStringConvertible {
+extension File: CustomDebugStringConvertible {
 
     // MARK: - CustomDebugStringConvertible
 

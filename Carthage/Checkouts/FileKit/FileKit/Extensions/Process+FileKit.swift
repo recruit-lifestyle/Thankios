@@ -1,5 +1,5 @@
 //
-//  NSBundle+FileKit.swift
+//  Process+FileKit.swift
 //  FileKit
 //
 //  The MIT License (MIT)
@@ -25,13 +25,16 @@
 //  THE SOFTWARE.
 //
 
-import Foundation
+extension Process {
 
-extension NSBundle {
-
-    /// Returns an NSBundle for the given directory path.
-    public convenience init?(path: Path) {
-        self.init(path: path.rawValue)
+    /// The working directory for the current process.
+    public static var workingDirectory: Path {
+        get {
+            return Path.Current
+        }
+        set {
+            Path.Current = newValue
+        }
     }
 
 }

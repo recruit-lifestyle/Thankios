@@ -12,9 +12,6 @@
 		AADA791A1C9FE16E00318613 /* ThankiosKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF973B721C9E90480065ED90 /* ThankiosKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF29CE6A1CB24CA3003DE779 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29CE691CB24CA3003DE779 /* Project.swift */; };
 		BF29CE6C1CB24DD9003DE779 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29CE6B1CB24DD9003DE779 /* Library.swift */; };
-		BF29CE6F1CB24F33003DE779 /* ExtractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29CE6E1CB24F33003DE779 /* ExtractorProtocol.swift */; };
-		BF29CE711CB24FBB003DE779 /* LicenseFileExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29CE701CB24FBB003DE779 /* LicenseFileExtractor.swift */; };
-		BF29CE751CB2516E003DE779 /* ReadMeExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29CE741CB2516E003DE779 /* ReadMeExtractor.swift */; };
 		BF4B54351CB3C0AA00E0E410 /* FileKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AA5B5AAF1C9FE9D50099B3B5 /* FileKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF4B54371CB3C10400E0E410 /* PrettyColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4B54361CB3C10400E0E410 /* PrettyColors.framework */; };
 		BF4B54381CB3C10E00E0E410 /* PrettyColors.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = BF4B54361CB3C10400E0E410 /* PrettyColors.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -82,9 +79,6 @@
 		AA5B5AAF1C9FE9D50099B3B5 /* FileKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FileKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF29CE691CB24CA3003DE779 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		BF29CE6B1CB24DD9003DE779 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
-		BF29CE6E1CB24F33003DE779 /* ExtractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractorProtocol.swift; sourceTree = "<group>"; };
-		BF29CE701CB24FBB003DE779 /* LicenseFileExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseFileExtractor.swift; sourceTree = "<group>"; };
-		BF29CE741CB2516E003DE779 /* ReadMeExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadMeExtractor.swift; sourceTree = "<group>"; };
 		BF4B54361CB3C10400E0E410 /* PrettyColors.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PrettyColors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF973B5B1C9E8F6E0065ED90 /* thankios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thankios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF973B651C9E8F6E0065ED90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -140,15 +134,6 @@
 			path = ThankiosKit;
 			sourceTree = "<group>";
 		};
-		BF29CE6D1CB24F07003DE779 /* Extractors */ = {
-			isa = PBXGroup;
-			children = (
-				BF29CE701CB24FBB003DE779 /* LicenseFileExtractor.swift */,
-				BF29CE741CB2516E003DE779 /* ReadMeExtractor.swift */,
-			);
-			path = Extractors;
-			sourceTree = "<group>";
-		};
 		BF973B521C9E8F6E0065ED90 = {
 			isa = PBXGroup;
 			children = (
@@ -182,7 +167,6 @@
 		BF973B731C9E90480065ED90 /* ThankiosKit */ = {
 			isa = PBXGroup;
 			children = (
-				BF29CE6D1CB24F07003DE779 /* Extractors */,
 				BFBAC4621CA0035B00598D51 /* Managers */,
 				BFBAC45D1C9FFE5D00598D51 /* Protocols */,
 				BFBAC45C1C9FFE4D00598D51 /* Enumerations */,
@@ -223,7 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				BFBAC4671CA0037D00598D51 /* ManagerProtocol.swift */,
-				BF29CE6E1CB24F33003DE779 /* ExtractorProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -389,13 +372,10 @@
 			files = (
 				BFBAC4681CA0037D00598D51 /* ManagerProtocol.swift in Sources */,
 				BFBAC4611C9FFF9E00598D51 /* InputForm.swift in Sources */,
-				BF29CE751CB2516E003DE779 /* ReadMeExtractor.swift in Sources */,
 				BFBAC4661CA0037500598D51 /* CarthageManager.swift in Sources */,
 				BF29CE6C1CB24DD9003DE779 /* Library.swift in Sources */,
-				BF29CE711CB24FBB003DE779 /* LicenseFileExtractor.swift in Sources */,
 				BF29CE6A1CB24CA3003DE779 /* Project.swift in Sources */,
 				BFBAC4641CA0036900598D51 /* CocoaPodsManager.swift in Sources */,
-				BF29CE6F1CB24F33003DE779 /* ExtractorProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,7 +4,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2015 Nikolai Vazquez
+//  Copyright (c) 2015-2016 Nikolai Vazquez
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -29,14 +29,16 @@ import Foundation
 
 /// An enumerator for the contents of a directory that returns the paths of all
 /// files and directories contained within that directory.
-public struct DirectoryEnumerator : GeneratorType {
+public struct DirectoryEnumerator: GeneratorType {
 
     private let _path: Path, _enumerator: NSDirectoryEnumerator?
 
     /// Creates a directory enumerator for the given path.
+    ///
+    /// - Parameter path: The path a directory enumerator to be created for.
     public init(path: Path) {
         _path = path
-        _enumerator = Path.fileManager.enumeratorAtPath(path.rawValue)
+        _enumerator = NSFileManager().enumeratorAtPath(path.rawValue)
     }
 
     /// Returns the next path in the enumeration.

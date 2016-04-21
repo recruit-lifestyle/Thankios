@@ -10,6 +10,6 @@ import ThankiosKit
 
 func main(arguments: [String]) {
     let input = InputForm(arguments)
-    Project(path: input.rootPath).collect().write(input.destPath)
+    Project().collect().write(input.path)
 }
 main(Process.arguments)

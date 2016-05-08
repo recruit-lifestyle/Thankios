@@ -3,7 +3,7 @@
 //  Thankios
 //
 //  Created by Yuki Nagai on 3/21/16.
-//  Copyright © 2016 Yuki Nagai All rights reserved.
+//  Copyright © 2016 Recruit Lifestyle Co., Ltd. All rights reserved.
 //
 
 public protocol ManagerProtocol {

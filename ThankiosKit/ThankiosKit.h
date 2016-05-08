@@ -3,7 +3,7 @@
 //  ThankiosKit
 //
 //  Created by Yuki Nagai on 3/20/16.
-//  Copyright © 2016 Yuki Nagai All rights reserved.
+//  Copyright © 2016 Recruit Lifestyle Co., Ltd. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double ThankiosKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char ThankiosKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ThankiosKit/PublicHeader.h>
-
-

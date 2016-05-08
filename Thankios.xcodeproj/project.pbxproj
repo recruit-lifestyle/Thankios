@@ -496,7 +496,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Thankios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/. @executable_path/ThankiosKit.framework/Versions/Current/Frameworks /Library/Frameworks /Library/Frameworks/ThankiosKit.framework/Versions/Current/Frameworks $(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = info.ynagai.Thankios;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.recruit-lifestyle.Thankios";
 				PRODUCT_NAME = thankios;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -510,7 +510,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Thankios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/. @executable_path/ThankiosKit.framework/Versions/Current/Frameworks /Library/Frameworks /Library/Frameworks/ThankiosKit.framework/Versions/Current/Frameworks $(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = info.ynagai.Thankios;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.recruit-lifestyle.Thankios";
 				PRODUCT_NAME = thankios;
 			};
 			name = Release;
@@ -534,7 +534,7 @@
 				INFOPLIST_FILE = ThankiosKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = info.ynagai.ThankiosKit;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.recruit-lifestyle.ThankiosKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -562,7 +562,7 @@
 				INFOPLIST_FILE = ThankiosKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = info.ynagai.ThankiosKit;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.recruit-lifestyle.ThankiosKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -576,7 +576,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ThankiosKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = info.ynagai.ThankiosKitTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.recruit-lifestyle.ThankiosKitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thankios.app/Contents/MacOS/Thankios";
 			};
@@ -588,7 +588,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ThankiosKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = info.ynagai.ThankiosKitTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.recruit-lifestyle.ThankiosKitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thankios.app/Contents/MacOS/Thankios";
 			};

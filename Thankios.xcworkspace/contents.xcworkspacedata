@@ -5,9 +5,6 @@
       location = "container:Thankios.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Carthage/Checkouts/PrettyColors/PrettyColors.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Carthage/Checkouts/FileKit/FileKit.xcodeproj">
    </FileRef>
 </Workspace>

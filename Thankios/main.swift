@@ -9,7 +9,6 @@
 import ThankiosKit
 
 func main(arguments: [String]) {
-    let input = InputForm(arguments)
-    Project().collect().write(input.path)
+    ThankiosKit(arguments).generate()
 }
 main(Process.arguments)

@@ -10,19 +10,10 @@
 		AA5B5AB01C9FE9D50099B3B5 /* FileKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5B5AAF1C9FE9D50099B3B5 /* FileKit.framework */; };
 		AADA79191C9FE16E00318613 /* ThankiosKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF973B721C9E90480065ED90 /* ThankiosKit.framework */; };
 		AADA791A1C9FE16E00318613 /* ThankiosKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF973B721C9E90480065ED90 /* ThankiosKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BF29CE6A1CB24CA3003DE779 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29CE691CB24CA3003DE779 /* Project.swift */; };
-		BF29CE6C1CB24DD9003DE779 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29CE6B1CB24DD9003DE779 /* Library.swift */; };
 		BF4B54351CB3C0AA00E0E410 /* FileKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AA5B5AAF1C9FE9D50099B3B5 /* FileKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BF4B54371CB3C10400E0E410 /* PrettyColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4B54361CB3C10400E0E410 /* PrettyColors.framework */; };
-		BF4B54381CB3C10E00E0E410 /* PrettyColors.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = BF4B54361CB3C10400E0E410 /* PrettyColors.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF973B6C1C9E8FE50065ED90 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF973B6B1C9E8FE50065ED90 /* main.swift */; };
 		BF973B751C9E90480065ED90 /* ThankiosKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BF973B741C9E90480065ED90 /* ThankiosKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF973B7C1C9E90480065ED90 /* ThankiosKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF973B721C9E90480065ED90 /* ThankiosKit.framework */; };
-		BF973B831C9E90480065ED90 /* ThankiosKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF973B821C9E90480065ED90 /* ThankiosKitTests.swift */; };
-		BFBAC4611C9FFF9E00598D51 /* InputForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAC4601C9FFF9E00598D51 /* InputForm.swift */; };
-		BFBAC4641CA0036900598D51 /* CocoaPodsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAC4631CA0036900598D51 /* CocoaPodsManager.swift */; };
-		BFBAC4661CA0037500598D51 /* CarthageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAC4651CA0037500598D51 /* CarthageManager.swift */; };
-		BFBAC4681CA0037D00598D51 /* ManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAC4671CA0037D00598D51 /* ManagerProtocol.swift */; };
+		BFDFD7C91D4A291000ADD7EF /* ThankiosKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDFD7C81D4A291000ADD7EF /* ThankiosKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,20 +23,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = BF973B711C9E90480065ED90;
 			remoteInfo = ThankiosKit;
-		};
-		BF973B7D1C9E90480065ED90 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BF973B531C9E8F6E0065ED90 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BF973B711C9E90480065ED90;
-			remoteInfo = ThankiosKit;
-		};
-		BF973B7F1C9E90480065ED90 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BF973B531C9E8F6E0065ED90 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BF973B5A1C9E8F6E0065ED90;
-			remoteInfo = Thankios;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -57,7 +34,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				BF4B54351CB3C0AA00E0E410 /* FileKit.framework in Copy Frameworks */,
-				BF4B54381CB3C10E00E0E410 /* PrettyColors.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,22 +53,13 @@
 
 /* Begin PBXFileReference section */
 		AA5B5AAF1C9FE9D50099B3B5 /* FileKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FileKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF29CE691CB24CA3003DE779 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		BF29CE6B1CB24DD9003DE779 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
-		BF4B54361CB3C10400E0E410 /* PrettyColors.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PrettyColors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF973B5B1C9E8F6E0065ED90 /* thankios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thankios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF973B651C9E8F6E0065ED90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF973B6B1C9E8FE50065ED90 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BF973B721C9E90480065ED90 /* ThankiosKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThankiosKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF973B741C9E90480065ED90 /* ThankiosKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThankiosKit.h; sourceTree = "<group>"; };
 		BF973B761C9E90480065ED90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF973B7B1C9E90480065ED90 /* ThankiosKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThankiosKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF973B821C9E90480065ED90 /* ThankiosKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankiosKitTests.swift; sourceTree = "<group>"; };
-		BF973B841C9E90480065ED90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFBAC4601C9FFF9E00598D51 /* InputForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputForm.swift; sourceTree = "<group>"; };
-		BFBAC4631CA0036900598D51 /* CocoaPodsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaPodsManager.swift; sourceTree = "<group>"; };
-		BFBAC4651CA0037500598D51 /* CarthageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarthageManager.swift; sourceTree = "<group>"; };
-		BFBAC4671CA0037D00598D51 /* ManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerProtocol.swift; sourceTree = "<group>"; };
+		BFDFD7C81D4A291000ADD7EF /* ThankiosKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankiosKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,15 +76,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA5B5AB01C9FE9D50099B3B5 /* FileKit.framework in Frameworks */,
-				BF4B54371CB3C10400E0E410 /* PrettyColors.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF973B781C9E90480065ED90 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF973B7C1C9E90480065ED90 /* ThankiosKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +85,6 @@
 		AA5B5AB11C9FE9FF0099B3B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF4B54361CB3C10400E0E410 /* PrettyColors.framework */,
 				AA5B5AAF1C9FE9D50099B3B5 /* FileKit.framework */,
 			);
 			name = Frameworks;
@@ -140,7 +97,6 @@
 				AA5B5AB11C9FE9FF0099B3B5 /* Frameworks */,
 				BF973B5D1C9E8F6E0065ED90 /* Thankios */,
 				BF973B731C9E90480065ED90 /* ThankiosKit */,
-				BF973B811C9E90480065ED90 /* ThankiosKitTests */,
 				BF973B5C1C9E8F6E0065ED90 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -150,7 +106,6 @@
 			children = (
 				BF973B5B1C9E8F6E0065ED90 /* thankios.app */,
 				BF973B721C9E90480065ED90 /* ThankiosKit.framework */,
-				BF973B7B1C9E90480065ED90 /* ThankiosKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,57 +122,11 @@
 		BF973B731C9E90480065ED90 /* ThankiosKit */ = {
 			isa = PBXGroup;
 			children = (
-				BFBAC4621CA0035B00598D51 /* Managers */,
-				BFBAC45D1C9FFE5D00598D51 /* Protocols */,
-				BFBAC45C1C9FFE4D00598D51 /* Enumerations */,
-				BFBAC45B1C9FFE3F00598D51 /* Models */,
 				BF973B761C9E90480065ED90 /* Info.plist */,
 				BF973B741C9E90480065ED90 /* ThankiosKit.h */,
+				BFDFD7C81D4A291000ADD7EF /* ThankiosKit.swift */,
 			);
 			path = ThankiosKit;
-			sourceTree = "<group>";
-		};
-		BF973B811C9E90480065ED90 /* ThankiosKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				BF973B821C9E90480065ED90 /* ThankiosKitTests.swift */,
-				BF973B841C9E90480065ED90 /* Info.plist */,
-			);
-			path = ThankiosKitTests;
-			sourceTree = "<group>";
-		};
-		BFBAC45B1C9FFE3F00598D51 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				BFBAC4601C9FFF9E00598D51 /* InputForm.swift */,
-				BF29CE691CB24CA3003DE779 /* Project.swift */,
-				BF29CE6B1CB24DD9003DE779 /* Library.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		BFBAC45C1C9FFE4D00598D51 /* Enumerations */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Enumerations;
-			sourceTree = "<group>";
-		};
-		BFBAC45D1C9FFE5D00598D51 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				BFBAC4671CA0037D00598D51 /* ManagerProtocol.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		BFBAC4621CA0035B00598D51 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				BFBAC4631CA0036900598D51 /* CocoaPodsManager.swift */,
-				BFBAC4651CA0037500598D51 /* CarthageManager.swift */,
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,32 +181,13 @@
 			productReference = BF973B721C9E90480065ED90 /* ThankiosKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BF973B7A1C9E90480065ED90 /* ThankiosKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BF973B8D1C9E90480065ED90 /* Build configuration list for PBXNativeTarget "ThankiosKitTests" */;
-			buildPhases = (
-				BF973B771C9E90480065ED90 /* Sources */,
-				BF973B781C9E90480065ED90 /* Frameworks */,
-				BF973B791C9E90480065ED90 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BF973B7E1C9E90480065ED90 /* PBXTargetDependency */,
-				BF973B801C9E90480065ED90 /* PBXTargetDependency */,
-			);
-			name = ThankiosKitTests;
-			productName = ThankiosKitTests;
-			productReference = BF973B7B1C9E90480065ED90 /* ThankiosKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		BF973B531C9E8F6E0065ED90 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Recruit Lifestyle Co., Ltd.";
 				TargetAttributes = {
@@ -306,10 +196,6 @@
 					};
 					BF973B711C9E90480065ED90 = {
 						CreatedOnToolsVersion = 7.2.1;
-					};
-					BF973B7A1C9E90480065ED90 = {
-						CreatedOnToolsVersion = 7.2.1;
-						TestTargetID = BF973B5A1C9E8F6E0065ED90;
 					};
 				};
 			};
@@ -328,7 +214,6 @@
 			targets = (
 				BF973B5A1C9E8F6E0065ED90 /* Thankios */,
 				BF973B711C9E90480065ED90 /* ThankiosKit */,
-				BF973B7A1C9E90480065ED90 /* ThankiosKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -342,13 +227,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BF973B701C9E90480065ED90 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF973B791C9E90480065ED90 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -370,20 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFBAC4681CA0037D00598D51 /* ManagerProtocol.swift in Sources */,
-				BFBAC4611C9FFF9E00598D51 /* InputForm.swift in Sources */,
-				BFBAC4661CA0037500598D51 /* CarthageManager.swift in Sources */,
-				BF29CE6C1CB24DD9003DE779 /* Library.swift in Sources */,
-				BF29CE6A1CB24CA3003DE779 /* Project.swift in Sources */,
-				BFBAC4641CA0036900598D51 /* CocoaPodsManager.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF973B771C9E90480065ED90 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF973B831C9E90480065ED90 /* ThankiosKitTests.swift in Sources */,
+				BFDFD7C91D4A291000ADD7EF /* ThankiosKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,16 +259,6 @@
 			isa = PBXTargetDependency;
 			target = BF973B711C9E90480065ED90 /* ThankiosKit */;
 			targetProxy = AADA791B1C9FE16E00318613 /* PBXContainerItemProxy */;
-		};
-		BF973B7E1C9E90480065ED90 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BF973B711C9E90480065ED90 /* ThankiosKit */;
-			targetProxy = BF973B7D1C9E90480065ED90 /* PBXContainerItemProxy */;
-		};
-		BF973B801C9E90480065ED90 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BF973B5A1C9E8F6E0065ED90 /* Thankios */;
-			targetProxy = BF973B7F1C9E90480065ED90 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -570,30 +425,6 @@
 			};
 			name = Release;
 		};
-		BF973B8E1C9E90480065ED90 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = ThankiosKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.recruit-lifestyle.ThankiosKitTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thankios.app/Contents/MacOS/Thankios";
-			};
-			name = Debug;
-		};
-		BF973B8F1C9E90480065ED90 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = ThankiosKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.recruit-lifestyle.ThankiosKitTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thankios.app/Contents/MacOS/Thankios";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -620,15 +451,6 @@
 			buildConfigurations = (
 				BF973B8A1C9E90480065ED90 /* Debug */,
 				BF973B8B1C9E90480065ED90 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BF973B8D1C9E90480065ED90 /* Build configuration list for PBXNativeTarget "ThankiosKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BF973B8E1C9E90480065ED90 /* Debug */,
-				BF973B8F1C9E90480065ED90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

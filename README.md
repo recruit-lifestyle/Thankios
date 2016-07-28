@@ -1,5 +1,5 @@
 # Thankios
-Acknowlegements Settings.bundle generator for CocoaPods and Carthage.
+Acknowlegements Settings.bundle generator.
 
 ## Requirements
 * Xcode 7.3+
@@ -12,17 +12,8 @@ $ brew install thankios
 ```
 
 ## Usage
-```bash
-# Before running thankios, you should get license texts:
-$ pod install
-$ carthage checkout --no-use-binaries
-
-# On your project root:
-$ thankios <destination path>
-
-# Example:
-$ thankios ~/SampleProject/SampleProject/Settings.bundle/
-```
+1. Add License text files into a directory. [Like this.](https://github.com/recruit-lifestyle/Thankios/tree/master/Example/Licenses)
+2. `thankios <input directory> <output directory>`
 
 ## Credits
 Thankios is owned an maintained by [RECRUIT LIFESTYLE CO., LTD.](http://www.recruit-lifestyle.co.jp/).

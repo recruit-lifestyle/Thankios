@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Example
 //
-//  Created by Yuki Nagai on 3/20/16.
+//  Created by Yuki Nagai on 7/28/16.
 //  Copyright © 2016 Recruit Lifestyle Co., Ltd. All rights reserved.
 //
 

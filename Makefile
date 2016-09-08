@@ -1,6 +1,6 @@
 EXECUTABLE_NAME=thankios
 SCHEME_NAME=Thankios
-WORKSPACE_NAME=$(SCHEME_NAME).xcworkspace
+PROJECT_NAME=$(SCHEME_NAME).xcodeproj
 IDENTIFIER=jp.co.recuit-lifestyle.Thankios
 COMPONENTS_PLIST=Thankios/Components.plist
 
@@ -8,7 +8,7 @@ TEMPORARY_FOLDER?=/tmp/$(SCHEME_NAME).dst
 PREFIX?=/usr/local
 BUILD_TOOL?=xcodebuild
 
-XCODEFLAGS=-workspace '$(WORKSPACE_NAME)' -scheme '$(SCHEME_NAME)' DSTROOT=$(TEMPORARY_FOLDER)
+XCODEFLAGS=-project '$(PROJECT_NAME)' -scheme '$(SCHEME_NAME)' DSTROOT=$(TEMPORARY_FOLDER)
 
 OUTPUT_PACKAGE=$(SCHEME_NAME).pkg
 OUTPUT_FRAMEWORK=$(SCHEME_NAME)Kit.framework

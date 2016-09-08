@@ -12,8 +12,7 @@
 		BFA48B901D80EC3F00F5021D /* ThankiosKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFA48B881D80EC3F00F5021D /* ThankiosKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BFA48B961D80ECE300F5021D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA48B951D80ECE300F5021D /* main.swift */; };
 		BFA48B981D80ECEE00F5021D /* ThankiosKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA48B971D80ECEE00F5021D /* ThankiosKit.swift */; };
-		BFA48BAB1D80ED4200F5021D /* FileKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA48BA21D80ED3400F5021D /* FileKit.framework */; };
-		BFA48BDC1D80F71C00F5021D /* FileKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = BFA48BA21D80ED3400F5021D /* FileKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BFA48BFF1D810E5C00F5021D /* FileKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = BFA48BFE1D810E5C00F5021D /* FileKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,41 +22,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = BFA48B871D80EC3F00F5021D;
 			remoteInfo = ThankiosKit;
-		};
-		BFA48BA11D80ED3400F5021D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFA48B991D80ED3400F5021D /* FileKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5204B84B1B96B83800AA473F;
-			remoteInfo = "FileKit-OSX";
-		};
-		BFA48BA31D80ED3400F5021D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFA48B991D80ED3400F5021D /* FileKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5204B8581B96B85E00AA473F;
-			remoteInfo = "FileKit-iOS";
-		};
-		BFA48BA51D80ED3400F5021D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFA48B991D80ED3400F5021D /* FileKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 527612421BAEA3EE00503D0A;
-			remoteInfo = "FileKit-watchOS";
-		};
-		BFA48BA71D80ED3400F5021D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFA48B991D80ED3400F5021D /* FileKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 52B938B31BF3C3E5001B7AEB;
-			remoteInfo = "FileKit-tvOS";
-		};
-		BFA48BA91D80ED3400F5021D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFA48B991D80ED3400F5021D /* FileKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5263A9041B96BA3D00635A93;
-			remoteInfo = FileKitTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -73,13 +37,13 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BFA48BDB1D80F70F00F5021D /* Copy Frameworks */ = {
+		BFA48BF31D810BDB00F5021D /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BFA48BDC1D80F71C00F5021D /* FileKit.framework in Copy Frameworks */,
+				BFA48BFF1D810E5C00F5021D /* FileKit.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,7 +58,7 @@
 		BFA48B8B1D80EC3F00F5021D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFA48B951D80ECE300F5021D /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BFA48B971D80ECEE00F5021D /* ThankiosKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankiosKit.swift; sourceTree = "<group>"; };
-		BFA48B991D80ED3400F5021D /* FileKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FileKit.xcodeproj; path = Carthage/Checkouts/FileKit/FileKit.xcodeproj; sourceTree = "<group>"; };
+		BFA48BFE1D810E5C00F5021D /* FileKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FileKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +74,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFA48BAB1D80ED4200F5021D /* FileKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,10 +83,10 @@
 		BFA48B681D80EBE900F5021D = {
 			isa = PBXGroup;
 			children = (
-				BFA48B991D80ED3400F5021D /* FileKit.xcodeproj */,
 				BFA48B731D80EBE900F5021D /* Thankios */,
 				BFA48B891D80EC3F00F5021D /* ThankiosKit */,
 				BFA48B721D80EBE900F5021D /* Products */,
+				BFA48BE51D810A1B00F5021D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,16 +118,12 @@
 			path = ThankiosKit;
 			sourceTree = "<group>";
 		};
-		BFA48B9A1D80ED3400F5021D /* Products */ = {
+		BFA48BE51D810A1B00F5021D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BFA48BA21D80ED3400F5021D /* FileKit.framework */,
-				BFA48BA41D80ED3400F5021D /* FileKit.framework */,
-				BFA48BA61D80ED3400F5021D /* FileKit.framework */,
-				BFA48BA81D80ED3400F5021D /* FileKit.framework */,
-				BFA48BAA1D80ED3400F5021D /* FileKitTests.xctest */,
+				BFA48BFE1D810E5C00F5021D /* FileKit.framework */,
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +167,7 @@
 				BFA48B841D80EC3F00F5021D /* Frameworks */,
 				BFA48B851D80EC3F00F5021D /* Headers */,
 				BFA48B861D80EC3F00F5021D /* Resources */,
-				BFA48BDB1D80F70F00F5021D /* Copy Frameworks */,
+				BFA48BF31D810BDB00F5021D /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,12 +211,6 @@
 			mainGroup = BFA48B681D80EBE900F5021D;
 			productRefGroup = BFA48B721D80EBE900F5021D /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = BFA48B9A1D80ED3400F5021D /* Products */;
-					ProjectRef = BFA48B991D80ED3400F5021D /* FileKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				BFA48B701D80EBE900F5021D /* Thankios */,
@@ -265,44 +218,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		BFA48BA21D80ED3400F5021D /* FileKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FileKit.framework;
-			remoteRef = BFA48BA11D80ED3400F5021D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BFA48BA41D80ED3400F5021D /* FileKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FileKit.framework;
-			remoteRef = BFA48BA31D80ED3400F5021D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BFA48BA61D80ED3400F5021D /* FileKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FileKit.framework;
-			remoteRef = BFA48BA51D80ED3400F5021D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BFA48BA81D80ED3400F5021D /* FileKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FileKit.framework;
-			remoteRef = BFA48BA71D80ED3400F5021D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BFA48BAA1D80ED3400F5021D /* FileKitTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = FileKitTests.xctest;
-			remoteRef = BFA48BA91D80ED3400F5021D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BFA48B6F1D80EBE900F5021D /* Resources */ = {
@@ -352,6 +267,7 @@
 		BFA48B7C1D80EBE900F5021D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -395,12 +311,14 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		BFA48B7D1D80EBE900F5021D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -436,37 +354,34 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		BFA48B7F1D80EBE900F5021D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Thankios/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/. @executable_path/ThankiosKit.framework/Versions/Current/Frameworks /Library/Frameworks /Library/Frameworks/ThankiosKit.framework/Versions/Current/Frameworks $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.recruit-lifestyle.Thankios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		BFA48B801D80EBE900F5021D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Thankios/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/. @executable_path/ThankiosKit.framework/Versions/Current/Frameworks /Library/Frameworks /Library/Frameworks/ThankiosKit.framework/Versions/Current/Frameworks $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.recruit-lifestyle.Thankios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -483,12 +398,11 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = ThankiosKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.recruit-lifestyle.ThankiosKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -507,11 +421,10 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = ThankiosKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.recruit-lifestyle.ThankiosKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

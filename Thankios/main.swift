@@ -8,7 +8,7 @@
 
 import ThankiosKit
 
-func main(arguments: [String]) {
+func main(_ arguments: [String]) {
     ThankiosKit(arguments).generate()
 }
-main(Process.arguments)
+main(CommandLine.arguments)

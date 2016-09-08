@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BFA48B701D80EBE900F5021D"
-               BuildableName = "Thankios.app"
-               BlueprintName = "Thankios"
+               BlueprintIdentifier = "BFA48B871D80EC3F00F5021D"
+               BuildableName = "ThankiosKit.framework"
+               BlueprintName = "ThankiosKit"
                ReferencedContainer = "container:Thankios.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BFA48B701D80EBE900F5021D"
-            BuildableName = "Thankios.app"
-            BlueprintName = "Thankios"
-            ReferencedContainer = "container:Thankios.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -48,29 +39,18 @@
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
-      debugDocumentVersioning = "NO"
+      debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BFA48B701D80EBE900F5021D"
-            BuildableName = "Thankios.app"
-            BlueprintName = "Thankios"
+            BlueprintIdentifier = "BFA48B871D80EC3F00F5021D"
+            BuildableName = "ThankiosKit.framework"
+            BlueprintName = "ThankiosKit"
             ReferencedContainer = "container:Thankios.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "$(SRCROOT)/Example/Licenses"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "$(SRCROOT)/Example/Example/Settings.bundle"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BFA48B701D80EBE900F5021D"
-            BuildableName = "Thankios.app"
-            BlueprintName = "Thankios"
+            BlueprintIdentifier = "BFA48B871D80EC3F00F5021D"
+            BuildableName = "ThankiosKit.framework"
+            BlueprintName = "ThankiosKit"
             ReferencedContainer = "container:Thankios.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -27,7 +27,7 @@ public struct ThankiosKit {
         let specifiers = files.map { path in
             [
                 "FooterText": try! String(contentsOfPath: path),
-                "Title": (path.fileName as NSString).stringByDeletingPathExtension,
+                "Title": (path.fileName as NSString).deletingPathExtension,
                 "Type": "PSGroupSpecifier"
             ]
         }
@@ -36,8 +36,8 @@ public struct ThankiosKit {
             "PreferenceSpecifiers": specifiers,
             "StringsTable": title,
             "Title": title
-        ]
+        ] as [String : Any]
         let destination = Path(self.arguments[2]) + "\(title).plist"
-        try! contents.writeToPath(destination)
+        try! (contents as NSDictionary).writeToPath(destination)
     }
 }

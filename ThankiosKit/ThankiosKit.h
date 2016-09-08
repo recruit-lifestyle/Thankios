@@ -2,7 +2,7 @@
 //  ThankiosKit.h
 //  ThankiosKit
 //
-//  Created by Yuki Nagai on 3/20/16.
+//  Created by Yuki Nagai on 9/8/16.
 //  Copyright © 2016 Recruit Lifestyle Co., Ltd. All rights reserved.
 //
 
@@ -15,3 +15,5 @@ FOUNDATION_EXPORT double ThankiosKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char ThankiosKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ThankiosKit/PublicHeader.h>
+
+

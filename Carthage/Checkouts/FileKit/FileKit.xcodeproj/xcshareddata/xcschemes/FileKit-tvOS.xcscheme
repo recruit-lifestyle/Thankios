@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BFA48B701D80EBE900F5021D"
-               BuildableName = "Thankios.app"
-               BlueprintName = "Thankios"
-               ReferencedContainer = "container:Thankios.xcodeproj">
+               BlueprintIdentifier = "52B938B21BF3C3E5001B7AEB"
+               BuildableName = "FileKit.framework"
+               BlueprintName = "FileKit-tvOS"
+               ReferencedContainer = "container:FileKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,48 +29,28 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BFA48B701D80EBE900F5021D"
-            BuildableName = "Thankios.app"
-            BlueprintName = "Thankios"
-            ReferencedContainer = "container:Thankios.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
-      debugDocumentVersioning = "NO"
+      debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BFA48B701D80EBE900F5021D"
-            BuildableName = "Thankios.app"
-            BlueprintName = "Thankios"
-            ReferencedContainer = "container:Thankios.xcodeproj">
+            BlueprintIdentifier = "52B938B21BF3C3E5001B7AEB"
+            BuildableName = "FileKit.framework"
+            BlueprintName = "FileKit-tvOS"
+            ReferencedContainer = "container:FileKit.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "$(SRCROOT)/Example/Licenses"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "$(SRCROOT)/Example/Example/Settings.bundle"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BFA48B701D80EBE900F5021D"
-            BuildableName = "Thankios.app"
-            BlueprintName = "Thankios"
-            ReferencedContainer = "container:Thankios.xcodeproj">
+            BlueprintIdentifier = "52B938B21BF3C3E5001B7AEB"
+            BuildableName = "FileKit.framework"
+            BlueprintName = "FileKit-tvOS"
+            ReferencedContainer = "container:FileKit.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
